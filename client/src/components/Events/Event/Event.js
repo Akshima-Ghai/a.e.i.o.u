@@ -1,15 +1,27 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import moment from "moment";
-import DeleteIcon from "@material-ui/icons/Delete";
-import { Card, CardActions, CardContent, Typography, Grid, IconButton } from "@material-ui/core/";
-import { deleteEvent } from "../../../actions/events";
+import { Card, CardActions, CardContent, Typography, Grid, Button } from "@material-ui/core/";
+import { updateEvent } from "../../../actions/events";
+import { questions } from "../../Quiz/qData";
 import useStyles from "./styles";
 
 const Event = ({ event }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const classes = useStyles();
   const user = JSON.parse(localStorage.getItem("profile"));
+  const handleCompletedStatus = () => {
+    const status = { status: "Completed" };
+    console.log(status);
+    dispatch(updateEvent(event._id, status, history));
+  };
+  const handleCancelledStatus = () => {
+    const status = { status: "Cancelled" };
+    console.log(status);
+    dispatch(updateEvent(event._id, status, history));
+  };
   return (
     <Card className={classes.card} raised elevation={6}>
       <CardContent className={classes.cardContent}>
@@ -18,18 +30,8 @@ const Event = ({ event }) => {
         </Typography>
         <Grid container className={classes.gridContainer} justify="space-between" alignItems="stretch" spacing={0}>
           <Grid item xs={12}>
-            <Typography variant="h5" style={{ fontWeight: "500" }} display="inline" className={classes.title}>
-              {event.emotion}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
             <Typography style={{ color: "#0062ff" }} variant="h4" display="inline" className={classes.title}>
-              {event.task}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h5" style={{ fontWeight: "500" }} display="inline" className={classes.title}>
-              {event.reward}
+              {questions[1].answerOptions[event.task - 1].answerText}
             </Typography>
           </Grid>
         </Grid>
@@ -37,9 +39,14 @@ const Event = ({ event }) => {
       <CardActions className={classes.cardActions}>
         <Grid className={classes.applyBtn}>
           {user && (
-            <IconButton className={classes.expand} color="secondary" onClick={() => dispatch(deleteEvent(event._id))}>
-              <DeleteIcon fontSize="small" />
-            </IconButton>
+            <>
+              <Button variant="outlined" color="primary" onClick={() => handleCompletedStatus()}>
+                Done
+              </Button>
+              <Button variant="outlined" color="primary" onClick={() => handleCancelledStatus()}>
+                Cancelled
+              </Button>
+            </>
           )}
         </Grid>
       </CardActions>
