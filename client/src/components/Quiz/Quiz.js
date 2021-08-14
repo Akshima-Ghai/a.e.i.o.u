@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createEvent } from "../../actions/events";
-import { Container, Grid, Paper, Typography, Button } from "@material-ui/core";
+import { Container, Grid, Card, CardContent, CardActionArea, CardMedia, Typography, Button } from "@material-ui/core";
 import { questions } from "./qData";
 import useStyles from "./styles";
 
@@ -33,17 +33,15 @@ const Quiz = () => {
       setShowResult(true);
     }
   };
-  console.log("taskId=" + taskId);
-  console.log("emojiId=" + emojiId);
-  console.log("rewardId=" + rewardId);
+
   const handleSubmit = () => {
     const eventData = { emotion: emojiId, task: taskId, reward: rewardId };
     console.log(eventData);
     dispatch(createEvent(eventData, history));
   };
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper className={classes.paper} elevation={2}>
+    <Container className={classes.quiz} component="main" maxWidth="xs">
+      <Grid className={classes.paper}>
         {showResult ? (
           <>
             <Typography variant="h5">Ready for your task?</Typography>
@@ -59,14 +57,25 @@ const Quiz = () => {
             <Typography variant="h5">{questions[currentQ].questionText}</Typography>
             <Grid item className={classes.optionsGrid}>
               {questions[currentQ].answerOptions.map((option) => (
-                <Button className={classes.option} variant="outlined" color="primary" key={option.id} onClick={() => handleSubmitOptions(option.id)}>
-                  {option.answerText}
-                </Button>
+                <Card className={classes.option} onClick={() => handleSubmitOptions(option.id)}>
+                  <CardActionArea>
+                    <CardMedia
+                      className={classes.media}
+                      image={option.ansImg}
+                      title={option.answerText}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {option.answerText}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
               ))}
             </Grid>
           </>
         )}
-      </Paper>
+      </Grid>
     </Container>
   );
 };

@@ -10,7 +10,7 @@ const Navbar = () => {
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.appBar} position="static" color="inherit" elevation={5} width="100%">
+    <AppBar className={classes.appBar} position="static" color="inherit" elevation={0} width="100%">
       <Link to="/" className={classes.brandContainer}>
         {/* <img className={classes.image} src={logo} alt="icon" /> */}
         <p className={classes.title}>aeiou</p>

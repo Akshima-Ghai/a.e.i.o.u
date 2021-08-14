@@ -5,15 +5,29 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
-    optionsGrid: {
+    quiz: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        width: '100%'
+    },
+    optionsGrid: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     option: {
-        marginBottom: '0.5rem'
-    }
+        marginBottom: '0.5rem',
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignContent: 'center'
+    },
+    media: {
+        height: 140,
+    },
 }))

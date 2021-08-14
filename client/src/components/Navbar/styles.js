@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     alignItems: "center",
     padding: "10px 30px",
-    backgroundColor: "#fff",
+    backgroundColor: "#dff5f7",
   },
   image: {
     paddingRight: "10px",
@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
   title: {
     fontSize: "2rem",
     fontWeight: "500",
-    color: "#ff5050",
+    color: "#068fa0",
     textDecoration: "none !important",
   },
   brandContainer: {

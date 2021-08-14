@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
         display: "flex",
     },
     signInBtn: {
-        backgroundColor: "#ff5050",
+        backgroundColor: "#068fa0",
         color: "#fff",
         "&:hover": {
             backgroundColor: "#cc5050",
@@ -21,8 +21,8 @@ export default makeStyles((theme) => ({
         marginRight: theme.spacing(2),
     },
     profile: {
-        color: theme.palette.getContrastText("#ff5050"),
-        backgroundColor: "#ff5050",
+        color: theme.palette.getContrastText("#068fa0"),
+        backgroundColor: "#068fa0",
     },
     icon: {
         padding: "0",

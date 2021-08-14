@@ -78,13 +78,13 @@ const RightMenu = () => {
                     <StyledMenu id="customized-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
                         <MenuItem>
                             <ListItemIcon>
-                                <AccountCircleIcon style={{ color: "#ff5050" }} fontSize="small" />
+                                <AccountCircleIcon style={{ color: "#068fa0" }} fontSize="small" />
                             </ListItemIcon>
                             <ListItemText primary={user.result.name} />
                         </MenuItem>
                         <MenuItem className={classes.button} button onClick={logout}>
                             <ListItemIcon>
-                                <PowerSettingsNewIcon style={{ color: "#ff5050" }} fontSize="small" />
+                                <PowerSettingsNewIcon style={{ color: "#068fa0" }} fontSize="small" />
                             </ListItemIcon>
                             <ListItemText primary="Logout" />
                         </MenuItem>

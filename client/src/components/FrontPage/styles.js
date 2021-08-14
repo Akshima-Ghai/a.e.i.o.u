@@ -20,7 +20,7 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
     },
     headline: {
-        color: '#068fa0',
+        color: '#0a4849',
         fontWeight: '500',
         fontSize: '4.2rem'
     },
@@ -29,11 +29,11 @@ export default makeStyles((theme) => ({
     },
     button: {
         color: '#fff',
-        backgroundColor: '#ff5050',
+        backgroundColor: '#068fa0',
         marginTop: '20px',
         borderRadius: 15,
         '&:hover': {
-            backgroundColor: '#cc5050',
+            backgroundColor: '#468fa0',
         }
     },
     FrontPageImg: {
