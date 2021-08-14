@@ -94,7 +94,7 @@ const Auth = () => {
                             )
                         }
                     </Grid>
-                    <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+                    <Button type="submit" fullWidth variant="contained" style={{ backgroundColor: '#068fa0', color: '#fff' }} className={classes.submit}>
                         {isSignup ? 'Sign Up' : 'Sign In'}
                     </Button>
                     <GoogleLogin
@@ -102,7 +102,7 @@ const Auth = () => {
                         render={(renderProps) => (
                             <Button
                                 className={classes.googleButton}
-                                color="primary"
+                                style={{ backgroundColor: '#068fa0', color: '#fff' }}
                                 fullWidth
                                 onClick={renderProps.onClick}
                                 disabled={renderProps.disabled}
