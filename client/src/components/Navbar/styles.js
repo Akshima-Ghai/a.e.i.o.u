@@ -2,50 +2,36 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   appBar: {
+    borderRadius: 0,
+    height: "4rem",
+    marginBottom: "10px",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "0 20px",
-    boxShadow: "5px 5px 10px 0px #9e9feb",
-    marginBottom: "5rem",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "column",
-    },
+    padding: "10px 30px",
+    backgroundColor: "#fff",
   },
-  loginButton: {
-    backgroundColor: "#1f90f4",
-    color: "#fff",
-    borderRadius: 15,
-    "&:hover": {
-      backgroundColor: "#22adea",
-    },
-    marginLeft: 15,
-  },
-  mainContainer: {
-    display: "flex",
-    alignItems: "center",
-  },
-  heading: {
-    color: "#3551a7",
-    textDecoration: "none",
+  image: {
+    paddingRight: "10px",
+    height: "1.7rem",
   },
   toolbar: {
     display: "flex",
     justifyContent: "flex-end",
-    width: "400px",
+    [theme.breakpoints.down("sm")]: {
+      width: "auto",
+    },
   },
-  profile: {
-    display: "flex",
-    justifyContent: "flex-end",
-    width: "400px",
+  title: {
+    fontSize: "2rem",
+    fontWeight: "500",
+    color: "#ff5050",
+    textDecoration: "none !important",
   },
-  userName: {
+  brandContainer: {
     display: "flex",
     alignItems: "center",
-  },
-  purple: {
-    color: theme.palette.getContrastText("#1f90f4"),
-    backgroundColor: "#1f90f4",
+    textDecoration: "none !important",
   },
 }));
