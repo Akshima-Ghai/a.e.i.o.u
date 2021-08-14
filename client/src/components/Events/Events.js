@@ -5,11 +5,11 @@ import { Grid, CircularProgress, Typography } from "@material-ui/core";
 import Event from "./Event/Event";
 import useStyles from "./styles";
 
-const Events = ({}) => {
+const Events = () => {
   const { events, isLoading } = useSelector((state) => {
     return state.events;
   });
-  console.log(events);
+
   const classes = useStyles();
 
   if (!events.length && !isLoading)
