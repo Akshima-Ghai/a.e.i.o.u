@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import moment from "moment";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { Card, CardActions, CardContent, Button, Typography, Grid, IconButton, Collapse, Divider, Tooltip, Chip } from "@material-ui/core/";
+import { Card, CardActions, CardContent, Typography, Grid, IconButton } from "@material-ui/core/";
 import { deleteEvent } from "../../../actions/events";
 import useStyles from "./styles";
 

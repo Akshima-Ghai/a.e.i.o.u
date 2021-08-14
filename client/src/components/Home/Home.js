@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Button, Grid, Typography } from "@material-ui/core";
+import { Button, Container, Grid, Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { getEvents } from "../../actions/events";
 import Events from "../Events/Events";
 import useStyles from "./styles";
+import EventsTable from "../EventsTable/EventsTable";
 
 const Home = () => {
   const classes = useStyles();
@@ -16,8 +17,8 @@ const Home = () => {
   }, []);
 
   return (
-    <Grid className={classes.mainGrid} spacing={2}>
-      <Grid className={classes.startGrid} item>
+    <Container className={classes.mainGrid} spacing={2}>
+      <Grid className={classes.startGrid}>
         <Typography>
           Hello {user.name}, <br /> How are you feeling Today?
         </Typography>
@@ -25,12 +26,15 @@ const Home = () => {
           Start Now
         </Button>
       </Grid>
-      <Grid className={classes.startGrid} item>
-        <Events />
-        <Typography>Last 7 days</Typography>
-        <Typography>Table</Typography>
+      <Grid className={classes.startGrid}>
+        <Grid item>
+          <Events />
+        </Grid>
+        <Grid item>
+          <EventsTable />
+        </Grid>
       </Grid>
-    </Grid>
+    </Container>
   );
 };
 
