@@ -1,6 +1,6 @@
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 import useStyles from "./styles";
-import HomeImg from "../../images/home_page.png";
+import HomeImg from "../../images/front page/Asset 1.png";
 import { Link } from "react-router-dom";
 
 const FrontPage = () => {
@@ -9,7 +9,7 @@ const FrontPage = () => {
   return (
     <Container>
       <Grid container className={classes.gridContainer} spacing={3}>
-        <Grid className={classes.gridItem} item sm={12} md={6}>
+        <Grid className={classes.gridItem} item sm={12} md={4}>
           <Typography className={classes.headline}>
             Think Less
             <br /> Sleep Better
@@ -26,8 +26,8 @@ const FrontPage = () => {
             </Button>
           )}
         </Grid>
-        <Grid className={classes.gridItem} item sm={12} md={5}>
-          <img src={HomeImg} alt="A girl on phone" />
+        <Grid className={classes.gridImgItem} item sm={12} md={7}>
+          <img src={HomeImg} alt="mental-wellness" className={classes.FrontPageImg} />
         </Grid>
       </Grid>
     </Container>

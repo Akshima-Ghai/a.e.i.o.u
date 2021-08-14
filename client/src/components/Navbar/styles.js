@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
     title: {
         fontSize: "2rem",
         fontWeight: "500",
-        color: "#0062ff",
+        color: "#ff5050",
         textDecoration: "none !important",
     },
     brandContainer: {

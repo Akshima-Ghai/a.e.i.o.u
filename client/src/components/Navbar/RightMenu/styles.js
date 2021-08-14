@@ -5,13 +5,13 @@ export default makeStyles((theme) => ({
         display: "flex",
     },
     signInBtn: {
-        backgroundColor: "#0062ff",
+        backgroundColor: "#ff5050",
         color: "#fff",
         "&:hover": {
-            backgroundColor: "#1473e7",
+            backgroundColor: "#cc5050",
         },
         "&:focus": {
-            backgroundColor: "#1473e7",
+            backgroundColor: "#cc5050",
         },
         [theme.breakpoints.down("sm")]: {
             padding: "0.5rem 0.2rem"
