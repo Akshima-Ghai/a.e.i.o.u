@@ -1,12 +1,39 @@
-import { useState } from 'react';
 import { Typography, AppBar, Toolbar, Avatar, Button } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import useStyles from './styles';
+import { LOGOUT } from '../../constants/actionTypes';
 
 const Navbar = () => {
     const classes = useStyles();
     const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+
+    useEffect(() => {
+        const token = user?.token;
+        if (token) {
+            const decodedToken = decode(token);
+            if (decodedToken.exp * 1000 < new Date().getTime()) {
+                // if expiry time in millisecs is less than current time in millisecs
+                logout();
+            }
+        }
+        setUser(JSON.parse(localStorage.getItem('profile')));
+        // eslint-disable-next-line
+    }, [location]);
+
+    const logout = () => {
+        dispatch({ type: LOGOUT });
+        history.push('/');
+        setUser(null);
+    }
+
     return (
+
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.mainContainer}>
                 <Typography component={Link} to="/" className={classes.heading} variant="h4" align="center" >
@@ -24,7 +51,7 @@ const Navbar = () => {
                 )}
             </Toolbar>
         </AppBar>
-    )
+    );
 }
 
 export default Navbar;
