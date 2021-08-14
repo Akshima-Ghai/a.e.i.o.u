@@ -17,8 +17,8 @@ const Home = () => {
   }, []);
 
   return (
-    <Container className={classes.mainGrid} spacing={2}>
-      <Grid className={classes.startGrid}>
+    <Grid className={classes.gridContainer} container justify="center" alignItems="stretch" spacing={3}>
+      <Grid item xs={12} sm={6} md={6} lg={6}>
         <Typography>
           Hello {user.name}, <br /> How are you feeling Today?
         </Typography>
@@ -26,15 +26,15 @@ const Home = () => {
           Start Now
         </Button>
       </Grid>
-      <Grid className={classes.startGrid}>
-        <Grid item>
-          <Events />
-        </Grid>
-        <Grid item>
-          <EventsTable />
-        </Grid>
+
+      <Grid item xs={12} sm={9} md={9} lg={8}>
+        <Events />
       </Grid>
-    </Container>
+
+      <Grid item xs={12} sm={12} md={9} lg={8}>
+        <EventsTable />
+      </Grid>
+    </Grid>
   );
 };
 
