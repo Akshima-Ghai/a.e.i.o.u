@@ -5,16 +5,22 @@ export default makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        minHeight: '80vh',
     },
     gridItem: {
         textAlign: 'left',
         [theme.breakpoints.down('sm')]: {
             textAlign: 'center'
-        }
+        },
+    },
+    gridImgItem: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     headline: {
-        color: '#4057a0',
+        color: '#068fa0',
         fontWeight: '500',
         fontSize: '4.2rem'
     },
@@ -23,11 +29,15 @@ export default makeStyles((theme) => ({
     },
     button: {
         color: '#fff',
-        backgroundColor: '#1f90f4',
+        backgroundColor: '#ff5050',
         marginTop: '20px',
         borderRadius: 15,
         '&:hover': {
-            backgroundColor: '#22adea',
+            backgroundColor: '#cc5050',
         }
+    },
+    FrontPageImg: {
+        height: '85%',
+        width: '85%'
     }
 }));
