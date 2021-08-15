@@ -25,23 +25,23 @@ const Home = () => {
 
   let counter = 0;
   if (events.length > 0) {
-    let startdate = moment(new Date(events[0].createdAt)).format().split("-")[2].slice(0, 2);
-
+    let startdate = events[0].createdAt;
     counter = events[0].status === "Completed" ? 1 : 0;
     for (let i = 1; i < events.length; i++) {
-      let date = moment(new Date(events[i].createdAt)).format().split("-")[2].slice(0, 2);// eslint-disable-next-line
-      if (date == startdate) {
+      let date = moment(new Date(events[i].createdAt)).format().split("-")[2].slice(0, 2);
+      let nextdate = moment(new Date(startdate)).clone().add(1, "days").format().split("-")[2].slice(0, 2); // eslint-disable-next-line
+      if (date == moment(new Date(startdate)).format().split("-")[2].slice(0, 2)) {
         continue;
       } else if (events[i].status !== "Completed") {
-        continue;// eslint-disable-next-line
-      } else if (date == parseInt(startdate) + 1) {
+        continue; // eslint-disable-next-line
+      } else if (date == nextdate) {
         counter += 1;
-        startdate = date;// eslint-disable-next-line
-      } else if (date != parseInt(startdate) + 1 && events[i].status === "Completed") {
-        startdate = date;
+        startdate = events[i].createdAt; // eslint-disable-next-line
+      } else if (date != nextdate && events[i].status === "Completed") {
+        startdate = events[i].createdAt;
         counter = 1;
       } else {
-        startdate = date;
+        startdate = events[i].createdAt;
         counter = 0;
       }
     }
