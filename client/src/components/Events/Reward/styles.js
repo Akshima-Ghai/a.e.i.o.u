@@ -1,62 +1,72 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      marginBottom: theme.spacing(1),
+  button: {
+    color: "#fff",
+    marginTop: "0.6rem",
+    marginBottom: "0.5rem",
+    backgroundColor: "#068fa0",
+    borderRadius: 15,
+    "&:hover": {
+      backgroundColor: "#468fa0",
     },
-  },
-  root1: {
-    minWidth: 0,
-    margin: theme.spacing(0.1),
   },
   paper: {
-    padding: "0",
-  },
-  form: {
     display: "flex",
-    flexWrap: "wrap",
+    flexDirection: "column",
     justifyContent: "center",
+    alignItems: "center",
   },
-  fileInput: {
-    width: "97%",
-    margin: "10px 0",
+  quiz: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
-  fullGrid: {
-    marginTop: 0,
-  },
-  buttonSubmit: {
-    marginBottom: 10,
-  },
-  dialogWrapper: {
-    paddingBottom: theme.spacing(0.5),
-    paddingRight: theme.spacing(2),
-    paddingLeft: theme.spacing(2),
-    position: "absolute",
-    height: "50vh",
-    width: "70vw",
-    top: theme.spacing(2),
-    [theme.breakpoints.down("sm")]: {
-      width: "90vw",
-    },
+  quizTitle: {
+    textAlign: "center",
+    marginBottom: "1rem",
+    fontSize: "2rem",
+    color: "#016a74",
   },
   img: {
-    maxWidth: "50vw",
+    paddingTop: "10px",
+    maxWidth: "25vw",
     [theme.breakpoints.down("sm")]: {
-      maxWidth: "50vw",
+      maxWidth: "40vw",
     },
     [theme.breakpoints.down("xs")]: {
       paddingTop: "10px",
       maxWidth: "75vw",
     },
   },
-  dialogTitle: {
-    paddingRight: theme.spacing(1),
+  final: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: "1rem",
   },
-  dialogContent: {
-    [theme.breakpoints.down("xs")]: {
-      paddingLeft: "5px",
-      paddingRight: "5px",
+  acceptBtn: {
+    borderColor: "#068fa0",
+    color: "#fff",
+    borderRadius: "5px",
+    backgroundColor: "#068fa0",
+    fontWeight: "500",
+    marginTop: "1rem",
+    "&:hover": {
+      backgroundColor: "#068fb0",
     },
+    "&:focus": {
+      backgroundColor: "#068fb0",
+    },
+    "&:active": {
+      backgroundColor: "#068fb0",
+    },
+  },
+  points: {
+    fontSize: "1.3rem",
+    color: "#888888",
   },
 }));

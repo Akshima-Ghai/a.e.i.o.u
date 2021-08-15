@@ -5,19 +5,17 @@ import moment from "moment";
 import { Card, CardActions, CardMedia, CardContent, Typography, Grid, Button } from "@material-ui/core/";
 import { updateEvent } from "../../../actions/events";
 import { questions } from "../../Quiz/qData";
-import Reward from "../Reward/Reward";
 import useStyles from "./styles";
 
 const Event = ({ event }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const classes = useStyles();
-  const [openFavoritePopup, setOpenFavoritePopup] = useState(false);
   const user = JSON.parse(localStorage.getItem("profile"));
   const handleCompletedStatus = () => {
     const status = { status: "Completed" };
-    console.log(status);
-    setOpenFavoritePopup(true);
+    const reward = event.reward;
+    history.push(`/reward/${reward}`);
     dispatch(updateEvent(event._id, status, history));
   };
   const handleCancelledStatus = () => {
@@ -38,7 +36,7 @@ const Event = ({ event }) => {
             </Typography>
           </Grid>
           <Grid container item xs={12}>
-            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: 'flex', flexDirection: 'column' }} justifyContent="center">
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", flexDirection: "column" }} justifyContent="center">
               <>
                 {questions[1].answerOptions[event.task - 1].points.map((item, index) => {
                   return (
@@ -53,7 +51,6 @@ const Event = ({ event }) => {
                       <Button className={classes.applyCompleted} size="small" variant="outlined" onClick={() => handleCompletedStatus()}>
                         Done
                       </Button>
-                      <Reward openFavoritePopup={openFavoritePopup} setOpenFavoritePopup={setOpenFavoritePopup} event={event} />
                       <Button className={classes.applyCancelled} size="small" variant="outlined" onClick={() => handleCancelledStatus()}>
                         Cancel
                       </Button>
@@ -62,8 +59,13 @@ const Event = ({ event }) => {
                 </Grid>
               </>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: 'flex' }} justifyContent="center" alignItems="center">
-              <img className={classes.img} alt={questions[1].answerOptions[event.task - 1].answerText} src={questions[1].answerOptions[event.task - 1].ansImg} title={questions[1].answerOptions[event.task - 1].answerText} />
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex" }} justifyContent="center" alignItems="center">
+              <img
+                className={classes.img}
+                alt={questions[1].answerOptions[event.task - 1].answerText}
+                src={questions[1].answerOptions[event.task - 1].ansImg}
+                title={questions[1].answerOptions[event.task - 1].answerText}
+              />
             </Grid>
           </Grid>
         </Grid>

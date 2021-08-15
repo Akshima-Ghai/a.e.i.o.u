@@ -1,39 +1,36 @@
-import React, { useEffect } from "react";
-import { Grid, Typography, IconButton } from "@material-ui/core";
-import { Dialog, DialogTitle, DialogContent } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import { Paper, Typography, Button, Grid, Container } from "@material-ui/core";
 import { questions } from "../../Quiz/qData";
-import useStyles from "../Event/styles";
+import useStyles from "./styles";
 
-const Reward = ({ openFavoritePopup, setOpenFavoritePopup, event }) => {
-  console.log("reward");
+const Reward = () => {
   const classes = useStyles();
+  const reward = useParams();
+  const rewardId = reward.id;
   return (
-    <Dialog open={openFavoritePopup} maxWidth="lg" classes={{ paper: classes.dialogWrapper }}>
-      <Grid container>
-        <Grid item xs={12} md={12}>
-          <DialogTitle className={classes.dialogTitle} style={{ paddingTop: "0", paddingBottom: "0" }}>
-            <div style={{ display: "flex" }}>
-              <Typography variant="h5" component="h6" style={{ flexGrow: 1, display: "flex", alignItems: "center", textAlign: "center", fontWeight: "530" }}>
-                Reward
-              </Typography>
-              <IconButton
-                className={classes.root1}
-                color="secondary"
-                onClick={() => {
-                  setOpenFavoritePopup(false);
-                }}
-              >
-                <CloseIcon />
-              </IconButton>
-            </div>
-          </DialogTitle>
-          <DialogContent className={classes.dialogContent} dividers>
-            <img className={classes.img} src={questions[2].answerOptions[event.reward - 1].ansImg} title={questions[2].answerOptions[event.reward - 1].answerText} />
-          </DialogContent>
-        </Grid>
+    <Container className={classes.quiz} component="main" maxWidth="xs">
+      <Grid className={classes.paper}>
+        <Paper className={classes.final}>
+          <Typography className={classes.quizTitle}>Enjoy your reward</Typography>
+          {/* <Typography className={classes.points}>{questions[2].answerOptions[rewardId - 1].answerText}</Typography> */}
+          {questions[2].answerOptions[rewardId - 1].points.map((item, index) => (
+            <Typography className={classes.points} key={index}>
+              {item}
+            </Typography>
+          ))}
+          <img
+            className={classes.img}
+            alt={questions[2].answerOptions[rewardId - 1].answerText}
+            src={questions[2].answerOptions[rewardId - 1].ansImg}
+            title={questions[2].answerOptions[rewardId - 1].answerText}
+          />
+          <Button component={Link} to="/home" className={classes.button} variant="contained">
+            Back
+          </Button>
+        </Paper>
       </Grid>
-    </Dialog>
+    </Container>
   );
 };
 
