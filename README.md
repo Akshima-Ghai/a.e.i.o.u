@@ -1,4 +1,4 @@
-# aeiou
+<h1 align="center">aeiou</h1>
 
 <div align="center">  
 <br>
@@ -14,7 +14,7 @@
 
 <br>
 
-<h3 align="center"> 🌟 aeiou (An Emotion Invigilator Only for You) is a web app inspired from ebb that gamifies 💻 stress/anxiety/depression management in an actionable manner to provide relief 🚀</h3>
+<h4 align="center"> 🌟 aeiou (An Emotion Invigilator Only for You) is a web app inspired from ebb that gamifies 💻 stress/anxiety/depression management in an actionable manner to provide relief 🚀</h4>
 
 <br>
 
