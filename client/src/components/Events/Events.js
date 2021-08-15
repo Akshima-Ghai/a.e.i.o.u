@@ -1,9 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { Grid, CircularProgress, Typography, Box, Button, Container, Divider } from "@material-ui/core";
+import { Grid, CircularProgress, Typography, Container, Divider } from "@material-ui/core";
 import moment from "moment";
-
 import Event from "./Event/Event";
 import useStyles from "./styles";
 
@@ -14,8 +12,7 @@ const Events = () => {
   const current = events.filter((event) => {
     const date = moment(new Date(event.createdAt)).format("DD-MM-YYYY");
     const currdate = moment(new Date()).format("DD-MM-YYYY");
-    // return date == currdate;
-    return event.status == "Not Reported" && date == currdate;
+    return event.status === "Not Reported" && date === currdate;
   });
   const classes = useStyles();
   const length = current.length;
@@ -45,7 +42,7 @@ const Events = () => {
           return (
             <Grid key={event._id} item xs={12} sm={12} md={12} lg={12}>
               <Event event={event} />
-              {length != count && <Divider />}
+              {length !== count && <Divider />}
             </Grid>
           );
         })}
