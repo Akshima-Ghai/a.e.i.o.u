@@ -25,6 +25,8 @@ export default makeStyles((theme) => ({
   },
   button: {
     color: "#fff",
+    marginTop: '0.6rem',
+    marginBottom: '0.5rem',
     backgroundColor: "#068fa0",
     borderRadius: 15,
     "&:hover": {
