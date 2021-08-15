@@ -59,20 +59,6 @@ const Quiz = () => {
             {questions[currentQ].answerOptions.map((option) => (
               <Button variant="outlined" className={classes.option} onClick={() => handleSubmitOptions(option.id)}>
                 {option.ansEmo} {option.answerText}
-                {/* <CardContent className={classes.cardContent}>
-                  <Grid container item xs={12}>
-                    <Grid item xs={12} sm={6} md={6} lg={6} className={classes.optionsGrid}>
-                      <Typography style={{ color: "#0a4849" }} variant="h4" display="inline" className={classes.quizTitle}>
-                        {option.answerText}
-                      </Typography>
-                    </Grid>
-                    <Grid item xs={12} sm={6} md={6} lg={6} className={classes.optionsGrid}>
-                      <CardMedia>
-                        <img className={classes.img} alt={option.answerText} src={option.ansImg} title={option.answerText} />
-                      </CardMedia>
-                    </Grid>
-                  </Grid>
-                </CardContent> */}
               </Button>
             ))}
           </>
