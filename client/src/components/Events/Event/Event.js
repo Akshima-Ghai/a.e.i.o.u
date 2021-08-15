@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
-import { Card, CardActions, CardMedia, CardContent, Typography, Grid, Button } from "@material-ui/core/";
+import { Card, CardContent, Typography, Grid, Button } from "@material-ui/core/";
 import { updateEvent } from "../../../actions/events";
 import { questions } from "../../Quiz/qData";
 import useStyles from "./styles";
@@ -20,7 +20,6 @@ const Event = ({ event }) => {
   };
   const handleCancelledStatus = () => {
     const status = { status: "Cancelled" };
-    console.log(status);
     dispatch(updateEvent(event._id, status, history));
   };
   return (
@@ -29,14 +28,14 @@ const Event = ({ event }) => {
         <Typography className={classes.overlay2} variant="subtitle2" align="right">
           {moment(event.createdAt).fromNow()}
         </Typography>
-        <Grid container justify="space-between" alignItems="stretch" spacing={0}>
+        <Grid container justifyContent="space-between" alignItems="stretch" spacing={0}>
           <Grid item xs={12}>
             <Typography style={{ color: "#0a4849" }} variant="h4" display="inline" className={classes.title}>
               {questions[1].answerOptions[event.task - 1].answerText}
             </Typography>
           </Grid>
           <Grid container item xs={12}>
-            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", flexDirection: "column", marginTop: "1rem" }} justifyContent="flex-start">
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", flexDirection: "column", marginTop: "1rem", justifyContent: "center" }}>
               <>
                 {questions[1].answerOptions[event.task - 1].points.map((item, index) => {
                   return (
@@ -59,7 +58,7 @@ const Event = ({ event }) => {
                 </Grid>
               </>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex" }} justifyContent="center" alignItems="center">
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
               <img
                 className={classes.img}
                 alt={questions[1].answerOptions[event.task - 1].answerText}

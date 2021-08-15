@@ -48,7 +48,7 @@ export const questions = [
       },
       {
         id: "3", answerText: "Read", ansEmo: '📙', ansImg: read, points: [
-          "Read novels, poems and short stories📚",
+          "Read novels, poems and short stories",
           "Reading can be a beautiful escape from the daily routine",
           "Reading gives an opportunity to unplug from the world and a chance to rest",
         ]
@@ -75,7 +75,7 @@ export const questions = [
       },
       {
         id: "7", answerText: "Meditate", ansEmo: '🧘‍♀️', ansImg: meditate, points: [
-          "Meditate helps in improving better focus and concentration",
+          "Meditation helps in improving better focus and concentration",
           "It can improve your tolerance for pain",
           "Mindfulness meditation encourages you to slow down and allows for deeper self-reflection",
         ]
@@ -97,31 +97,31 @@ export const questions = [
     answerOptions: [
       {
         id: "1", answerText: "Game", ansEmo: "🎮", ansImg: game, points: [
-          "Enjoy playing your favourite games🎮",
+          "Enjoy playing your favourite games",
           "Video games can improve manual dexterity",
         ]
       },
       {
         id: "2", answerText: "Netflix", ansEmo: "🎬", ansImg: netflix, points: [
-          "Watch your favourite series/movies🎥",
+          "Watch your favourite series/movies",
           "It will help you cope with stress",
         ]
       },
       {
         id: "3", answerText: "Icecream", ansEmo: "🍦", ansImg: Icecream, points: [
-          "Reward yourself with your favourite icecream😋",
+          "Reward yourself with your favourite icecream",
           "Ice cream stimulates the thrombotonin, which is a hormone of happiness",
         ]
       },
       {
-        id: "4", answerText: "Nap", ansEmo: "😴", ansImg: nap, points: ["Nap",
-          "Nothing is better than a peaceful nap😴",
+        id: "4", answerText: "Nap", ansEmo: "😴", ansImg: nap, points: [
+          "Nothing is better than a peaceful nap",
           "Sleep can boost your immune system",
         ]
       },
       {
-        id: "5", answerText: "Trip", ansEmo: "⛺", ansImg: trip, points: ["Trip",
-          "Forget your worries with a short trip to beach/mountains⛺",
+        id: "5", answerText: "Trip", ansEmo: "⛺", ansImg: trip, points: [
+          "Forget your worries with a short trip to beach/mountains",
           "Exposure to nature will make you feel better both emotionally and physically"
         ]
       },

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Button, Container, Grid, Typography, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -11,16 +11,16 @@ const Home = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("profile"));
-  console.log(user);
+
   useEffect(() => {
     dispatch(getEvents()); // eslint-disable-next-line
   }, []);
 
   return (
-    <Grid className={classes.gridContainer} container justify="center" alignItems="stretch" spacing={3}>
+    <Grid className={classes.gridContainer} container justifyContent="center" alignItems="stretch" spacing={3}>
       <Grid item xs={12} sm={11} md={8} lg={7}>
         <Container className={classes.box}>
-          <Grid className={classes.gridContainer} container justify="center" alignItems="stretch">
+          <Grid className={classes.gridContainer} container justifyContent="center" alignItems="stretch">
             <Grid item xs={12}>
               <Box textAlign="center">
                 <Typography style={{ color: "#0a4849" }} variant="h5" display="inline" className={classes.title}>
