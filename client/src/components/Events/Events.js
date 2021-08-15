@@ -22,8 +22,8 @@ const Events = () => {
       <Container className={classes.box}>
         <Grid container className={classes.noPosts}>
           <Grid item xs={12}>
-            <Typography variant="h4" style={{ fontWeight: "500", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              No Events
+            <Typography variant="h4" style={{ fontWeight: "500", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+              No Pending Task
             </Typography>
           </Grid>
         </Grid>
