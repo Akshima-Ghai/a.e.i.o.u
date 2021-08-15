@@ -1,6 +1,6 @@
 import { FETCH_ALL, CREATE, UPDATE, DELETE, START_LOADING, END_LOADING } from "../constants/actionTypes";
 
-const EventReducer = (state = { isLoading: true, events: [], counter:1 }, action) => {
+const EventReducer = (state = { isLoading: true, events: [] }, action) => {
   switch (action.type) {
     case START_LOADING:
       return { ...state, isLoading: true };
@@ -17,8 +17,6 @@ const EventReducer = (state = { isLoading: true, events: [], counter:1 }, action
       return { ...state, events: state.events.map((event) => (event._id === action.payload._id ? action.payload : event)) };
     case DELETE:
       return { ...state, events: state.events.filter((event) => event._id !== action.payload) };
-    case "COUNTER":
-      return {...state, counter:action.counter}
     default:
       return state;
   }

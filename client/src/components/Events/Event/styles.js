@@ -42,19 +42,19 @@ export default makeStyles((theme) => ({
     color: "#024649",
     borderRadius: 15,
     borderColor: "#cdf6f8",
-    backgroundColor: '#cdf6f8',
+    backgroundColor: "#cdf6f8",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
-    '&:hover': {
-      backgroundColor: '#cdf6e8',
+    "&:hover": {
+      backgroundColor: "#cdf6e8",
     },
     [theme.breakpoints.down("xs")]: {
       fontSize: "3vmin",
     },
-    fontWeight: '600',
-    marginTop: '0.5rem',
-    marginBottom: '0.5rem'
+    fontWeight: "600",
+    marginTop: "0.5rem",
+    marginBottom: "0.5rem",
   },
   applyCancelled: {
     transform: "rotate(0deg)",
@@ -66,16 +66,16 @@ export default makeStyles((theme) => ({
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
-    marginTop: '0.5rem',
-    marginBottom: '0.5rem',
+    marginTop: "0.5rem",
+    marginBottom: "0.5rem",
     [theme.breakpoints.down("xs")]: {
       fontSize: "3vmin",
     },
-    backgroundColor: '#ffdadb',
-    fontWeight: '600',
-    '&:hover': {
-      backgroundColor: '#fcdacb',
-    }
+    backgroundColor: "#ffdadb",
+    fontWeight: "600",
+    "&:hover": {
+      backgroundColor: "#fcdacb",
+    },
   },
 
   expandOpen: {
@@ -99,7 +99,7 @@ export default makeStyles((theme) => ({
   },
   overlay2: {
     position: "absolute",
-    top: "0px",
+    top: "5px",
     right: "0px",
     color: "#0a4849",
   },

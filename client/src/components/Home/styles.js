@@ -17,27 +17,6 @@ export default makeStyles((theme) => ({
   gridContainer: {
     padding: "10px",
   },
-  heroContainer:{
-    display:"flex",
-    width:"80%",
-    margin:"0 auto",
-    justifyContent:"space-evenly"
-  },
-  heroItemContainer:{
-    boxShadow:"0 1rem 2rem rgba(0,0,0,.2)",
-    padding:".5rem 1.75rem",
-    textAlign:"center",
-    borderRadius:"20px"
-  },
-  heroItemHead:{
-    color:"#222222",
-  },
-  heroItemSpan:{
-    color:"#3f51b5"
-  },
-  heroItemScore:{
-    color:"#3f51b5"
-  },
   box: {
     alignItems: "center",
     backgroundColor: "#ffffff",
@@ -46,8 +25,8 @@ export default makeStyles((theme) => ({
   },
   button: {
     color: "#fff",
-    marginTop: '0.6rem',
-    marginBottom: '0.5rem',
+    marginTop: "0.6rem",
+    marginBottom: "0.5rem",
     backgroundColor: "#068fa0",
     borderRadius: 15,
     "&:hover": {

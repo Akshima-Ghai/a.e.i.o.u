@@ -12,7 +12,7 @@ export default makeStyles((theme) => ({
     padding: "1rem",
     color: "#068fa0",
     display: "flex",
-    height: "50vh",
+    height: "30vh",
     justifyContent: "center",
   },
   loading: {

@@ -1,5 +1,4 @@
 import PostMessage from "../models/PostModal.js";
-import User from "../models/UserModal.js";
 import mongoose from "mongoose";
 
 export const getPosts = async (req, res) => {
@@ -13,35 +12,7 @@ export const getPosts = async (req, res) => {
 
 export const createPosts = async (req, res) => {
   const post = req.body;
-
-  const user = await User.findById(req.userId)
-
-  if(user.streak.length === 0){
-    user.streak.push({
-      date: new Date().getDate(),
-      month: new Date().getMonth() + 1
-    })    
-  } else {  
-    let isUnique = true;
-    user.streak.forEach(item => {
-      if(item.date == new Date().getDate().toString() && item.month == new Date().getMonth() + 1){
-        isUnique = false
-      }
-    })
-    console.log(isUnique)
-    if (isUnique){
-      user.streak.push({
-        date: new Date().getDate(),
-        month: new Date().getMonth() + 1
-      })
-    }
-  }  
-
-  await user.save()
-  
-  console.log(user)
   const newPost = new PostMessage({ ...post, createdAt: new Date().toISOString(), creator: req.userId });
-
   try {
     await newPost.save();
     res.status(201).json(newPost);

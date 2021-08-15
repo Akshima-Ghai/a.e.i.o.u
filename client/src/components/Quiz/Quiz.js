@@ -36,8 +36,7 @@ const Quiz = () => {
 
   const handleSubmit = () => {
     const eventData = { emotion: emojiId, task: taskId, reward: rewardId };
-    const user = JSON.parse(localStorage.getItem("profile"));
-    dispatch(createEvent(eventData, history, user.result.email));
+    dispatch(createEvent(eventData, history));
   };
   return (
     <Container className={classes.quiz} component="main" maxWidth="xs">
@@ -46,9 +45,16 @@ const Quiz = () => {
           <Paper className={classes.final}>
             <Typography className={classes.quizTitle}>Ready for your task?</Typography>
             {questions[1].answerOptions[taskId - 1].points.map((item, index) => (
-              <Typography className={classes.points} key={index}>{item}</Typography>
+              <Typography className={classes.points} key={index}>
+                {item}
+              </Typography>
             ))}
-            <img className={classes.img} alt={questions[1].answerOptions[taskId - 1].answerText} src={questions[1].answerOptions[taskId - 1].ansImg} title={questions[1].answerOptions[taskId - 1].answerText} />
+            <img
+              className={classes.img}
+              alt={questions[1].answerOptions[taskId - 1].answerText}
+              src={questions[1].answerOptions[taskId - 1].ansImg}
+              title={questions[1].answerOptions[taskId - 1].answerText}
+            />
             <Button className={classes.acceptBtn} variant="contained" onClick={() => handleSubmit()}>
               I Accept
             </Button>
