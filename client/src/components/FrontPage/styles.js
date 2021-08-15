@@ -22,7 +22,11 @@ export default makeStyles((theme) => ({
     headline: {
         color: '#0a4849',
         fontWeight: '500',
-        fontSize: '4.2rem'
+        fontSize: '4.2rem',
+        [theme.breakpoints.down('sm')]: {
+            textAlign: 'center',
+            fontSize: '2.5rem',
+        },
     },
     subHead: {
         color: '#3a3368'
