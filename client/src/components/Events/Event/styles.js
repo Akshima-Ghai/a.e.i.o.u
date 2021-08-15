@@ -37,7 +37,6 @@ export default makeStyles((theme) => ({
   applyCompleted: {
     transform: "rotate(0deg)",
     marginRight: "1rem",
-    marginTop: "5px",
     textTransform: "none",
     color: "#024649",
     borderRadius: 15,
@@ -77,7 +76,6 @@ export default makeStyles((theme) => ({
       backgroundColor: "#fcdacb",
     },
   },
-
   expandOpen: {
     transform: "rotate(180deg)",
   },
@@ -109,7 +107,6 @@ export default makeStyles((theme) => ({
   cardActions: {
     display: "flex",
     alignItems: "right",
-    paddingRight: "0.5rem",
     [theme.breakpoints.down(350)]: {
       flexDirection: "column",
       alignItems: "center",
@@ -122,6 +119,6 @@ export default makeStyles((theme) => ({
   },
   cardContent: {
     width: "100%",
-    padding: "0.5rem 1rem 0",
+    padding: "0.5rem 0",
   },
 }));

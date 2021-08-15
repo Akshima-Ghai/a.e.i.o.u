@@ -13,7 +13,6 @@ const Reward = () => {
       <Grid className={classes.paper}>
         <Paper className={classes.final}>
           <Typography className={classes.quizTitle}>Enjoy your reward</Typography>
-          {/* <Typography className={classes.points}>{questions[2].answerOptions[rewardId - 1].answerText}</Typography> */}
           {questions[2].answerOptions[rewardId - 1].points.map((item, index) => (
             <Typography className={classes.points} key={index}>
               {item}

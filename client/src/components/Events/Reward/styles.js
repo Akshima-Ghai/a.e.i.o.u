@@ -68,5 +68,6 @@ export default makeStyles((theme) => ({
   points: {
     fontSize: "1.3rem",
     color: "#888888",
+    marginRight: "auto"
   },
 }));

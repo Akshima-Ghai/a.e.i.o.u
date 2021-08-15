@@ -29,18 +29,18 @@ const Event = ({ event }) => {
         <Typography className={classes.overlay2} variant="subtitle2" align="right">
           {moment(event.createdAt).fromNow()}
         </Typography>
-        <Grid container className={classes.gridContainer} justify="space-between" alignItems="stretch" spacing={0}>
+        <Grid container justify="space-between" alignItems="stretch" spacing={0}>
           <Grid item xs={12}>
             <Typography style={{ color: "#0a4849" }} variant="h4" display="inline" className={classes.title}>
               {questions[1].answerOptions[event.task - 1].answerText}
             </Typography>
           </Grid>
           <Grid container item xs={12}>
-            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", flexDirection: "column" }} justifyContent="center">
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: "flex", flexDirection: "column", marginTop: "1rem" }} justifyContent="flex-start">
               <>
                 {questions[1].answerOptions[event.task - 1].points.map((item, index) => {
                   return (
-                    <Typography key={index} style={{ color: "#0a4849" }} variant="body1" display="inline" className={classes.title}>
+                    <Typography key={index} style={{ color: "#0a4849", marginBottom: '0.2rem' }} component="p" display="inline" className={classes.title}>
                       {item}
                     </Typography>
                   );

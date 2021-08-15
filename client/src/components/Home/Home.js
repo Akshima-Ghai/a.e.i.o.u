@@ -23,8 +23,8 @@ const Home = () => {
           <Grid className={classes.gridContainer} container justify="center" alignItems="stretch">
             <Grid item xs={12}>
               <Box textAlign="center">
-                <Typography style={{ color: "#0a4849" }} variant="h4" display="inline" className={classes.title}>
-                  Hello {user.result.name}, <br /> How are you feeling Today?
+                <Typography style={{ color: "#0a4849" }} variant="h5" display="inline" className={classes.title}>
+                  Hello <span style={{ color: "#068fa0" }}>{user.result.name}</span>, <br /> How are you feeling Today?
                 </Typography>
               </Box>
             </Grid>
