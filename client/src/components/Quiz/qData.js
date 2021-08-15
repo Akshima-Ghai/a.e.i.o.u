@@ -43,7 +43,7 @@ export const questions = [
         id: "2", answerText: "Talk", ansEmo: '👬', ansImg: talk, points: [
           "Call your friends",
           "Try to regularly make time with your friend",
-          "Talking to someone about your feelins can help in reduction of stress",
+          "Talking to someone about your feelings can help in reduction of stress",
         ]
       },
       {
@@ -63,7 +63,7 @@ export const questions = [
       {
         id: "5", answerText: "Cycling", ansEmo: '🚵‍♀️', ansImg: cycling, points: [
           "Cycling lends itself quite easily to joining a group of like-minded people",
-          "t promotes positive mental health",
+          "It promotes positive mental health",
           "It helps you sleep better",]
       },
       {
@@ -97,7 +97,7 @@ export const questions = [
     answerOptions: [
       {
         id: "1", answerText: "Game", ansEmo: "🎮", ansImg: game, points: [
-          "Enjoy by playing your favourite games🎉",
+          "Enjoy playing your favourite games🎮",
           "Video games can improve manual dexterity",
         ]
       },
