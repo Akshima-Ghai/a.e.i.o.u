@@ -1,6 +1,16 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
+  button: {
+    color: "#fff",
+    marginTop: "0.6rem",
+    marginBottom: "0.5rem",
+    backgroundColor: "#068fa0",
+    borderRadius: 15,
+    "&:hover": {
+      backgroundColor: "#468fa0",
+    },
+  },
   paper: {
     display: "flex",
     flexDirection: "column",
@@ -13,23 +23,6 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-  },
-  optionsGrid: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  option: {
-    marginBottom: "0.5rem",
-    width: "100%",
-    display: "flex",
-    justifyContent: "flex-start",
-    alignContent: "center",
-    borderColor: "#068fa0",
-    color: "#0b7e8b",
-    fontWeight: "500",
-    fontSize: "1.5rem",
   },
   quizTitle: {
     textAlign: "center",

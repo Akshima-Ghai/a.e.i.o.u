@@ -53,7 +53,6 @@ export const updateEvent = (id, event, history) => async (dispatch) => {
   try {
     const { data } = await api.updateEvent(id, event);
     dispatch({ type: UPDATE, payload: data });
-    history.push("/home");
   } catch (error) {
     console.log(error);
   }

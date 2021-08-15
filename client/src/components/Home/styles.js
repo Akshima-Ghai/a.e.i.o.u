@@ -37,5 +37,21 @@ export default makeStyles((theme) => ({
   },
   heroItemScore:{
     color:"#3f51b5"
-  }
+  },
+  box: {
+    alignItems: "center",
+    backgroundColor: "#ffffff",
+    borderRadius: "5px",
+    border: "1px solid #068fa0",
+  },
+  button: {
+    color: "#fff",
+    marginTop: '0.6rem',
+    marginBottom: '0.5rem',
+    backgroundColor: "#068fa0",
+    borderRadius: 15,
+    "&:hover": {
+      backgroundColor: "#468fa0",
+    },
+  },
 }));

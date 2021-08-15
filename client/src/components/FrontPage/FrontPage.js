@@ -9,7 +9,7 @@ const FrontPage = () => {
   return (
     <Container>
       <Grid container className={classes.gridContainer} spacing={3}>
-        <Grid className={classes.gridItem} item sm={12} md={4}>
+        <Grid className={classes.gridItem} item sm={12} md={6} lg={4}>
           <Typography className={classes.headline}>
             Think Less
             <br /> Sleep Better
@@ -26,7 +26,7 @@ const FrontPage = () => {
             </Button>
           )}
         </Grid>
-        <Grid className={classes.gridImgItem} item sm={12} md={7}>
+        <Grid className={classes.gridImgItem} item sm={12} md={6} lg={7}>
           <img src={HomeImg} alt="mental-wellness" className={classes.FrontPageImg} />
         </Grid>
       </Grid>
