@@ -6,6 +6,7 @@ export default makeStyles((theme) => ({
   },
   signInBtn: {
     backgroundColor: "#068fa0",
+    borderRadius: 15,
     color: "#fff",
     "&:hover": {
       backgroundColor: "#468fa0",
