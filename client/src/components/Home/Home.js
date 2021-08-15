@@ -19,29 +19,34 @@ const Home = () => {
   useEffect(() => {
     dispatch(getEvents()); // eslint-disable-next-line
   }, []);
-  
-  events = [...events].reverse()
 
-  let counter = 1;
-  if(events.length > 0){
-    let startdate = events[0].createdAt.split("-")[2].slice(0,2)
-    
-    for(let i=1;i<events.length; i++){
-      let date = events[i].createdAt.split("-")[2].slice(0,2)
-      if(date == startdate){
+  events = [...events].reverse();
+
+  let counter = 0;
+  if (events.length > 0) {
+    let startdate = events[0].createdAt.split("-")[2].slice(0, 2);
+    counter = events[0].status == "Completed" ? 1 : 0;
+    for (let i = 1; i < events.length; i++) {
+      let date = events[i].createdAt.split("-")[2].slice(0, 2);
+      if (date == startdate) {
         continue;
-      } else if(date == parseInt(startdate)+1){
+      } else if (events[i].status != "Completed") {
+        continue;
+      } else if (date == parseInt(startdate) + 1) {
         counter += 1;
-        startdate = date
-      } else{
-        startdate = date
+        startdate = date;
+      } else if (date != parseInt(startdate) + 1 && events[i].status == "Completed") {
+        startdate = date;
         counter = 1;
+      } else {
+        startdate = date;
+        counter = 0;
       }
-  }
+    }
   } else {
     counter = 0;
   }
-  
+
   return (
     <Grid className={classes.gridContainer} container justifyContent="center" alignItems="stretch" spacing={3}>
       <Grid item xs={12} sm={11} md={8} lg={7}>
@@ -62,13 +67,20 @@ const Home = () => {
               </Box>
             </Grid>
           </Grid>
-          {counter > 0 && <div className={classes.StreakContainer}>
-            <h2 className={classes.StreakHeader}><span className={classes.StreakStar}>&#9733;</span> You are on Streak</h2>
-            <div className={classes.StreakCounterContainer}>
-            <h1 className={classes.StreakCounter}>{counter}</h1>
-
+          {counter > 1 && (
+            <div className={classes.StreakContainer}>
+              <Typography style={{ color: "#0a4849" }} variant="h6" display="inline" className={classes.title}>
+                <span className={classes.StreakStar}>&#9733;</span> You are on {counter} day streak
+              </Typography>
+              <div className={classes.StreakCounterContainer}>
+                <div className={classes.StreakCounter}>
+                  <Typography style={{ color: "white" }} variant="h6" display="inline" className={classes.title}>
+                    {counter}
+                  </Typography>
+                </div>
+              </div>
             </div>
-          </div>}
+          )}
         </Container>
       </Grid>
       <Grid item xs={12} sm={11} md={8} lg={7}>

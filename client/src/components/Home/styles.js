@@ -33,24 +33,25 @@ export default makeStyles((theme) => ({
       backgroundColor: "#468fa0",
     },
   },
-  StreakContainer:{
-    textAlign:"center",
+  StreakContainer: {
+    textAlign: "center",
   },
-  StreakHeader:{
-    margin:"0",
-    marginTop:"1rem"
+  StreakHeader: {
+    margin: "0",
   },
-  StreakStar:{
-    color:"#068fa0",
+  StreakStar: {
+    color: "#068fa0",
+    width: "1rem",
   },
-  StreakCounterContainer:{
-    display:"flex",
-    justifyContent:"center"
+  StreakCounterContainer: {
+    display: "flex",
+    justifyContent: "center",
   },
-  StreakCounter:{
-    backgroundColor:"#068fa0",
-    padding:" .25rem 1rem",
-    color:"white",
-    borderRadius:"10px"
-  }
+  StreakCounter: {
+    marginBottom: "1rem",
+    backgroundColor: "#068fa0",
+    padding: " .20rem 0.8rem",
+    color: "white",
+    borderRadius: "15px",
+  },
 }));
