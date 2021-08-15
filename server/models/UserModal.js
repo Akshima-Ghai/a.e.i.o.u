@@ -16,10 +16,12 @@ const userSchema = mongoose.Schema({
   id: {
     type: String,
   },
-  streak: {
-    type: Number,
-    default: 0,
-  },
+  streak: [
+    {
+      date:String,
+      month:String
+    }
+  ],
 });
 
 const UserModal = mongoose.model("User", userSchema);
