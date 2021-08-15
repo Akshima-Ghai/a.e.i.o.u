@@ -163,9 +163,3 @@ http://localhost:3000/
 
 - Now you are all set to use this project.
 
-## Developers
-
-- Sakshi Verma
-- Pallavi Upadhyay
-- Nikhil Sharma
-- Akshima Ghai
