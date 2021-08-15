@@ -12,6 +12,8 @@
 
 ## A sneak peek into what we have here!
 
+- Our website is deployed at https://a-e-i-o-u.netlify.app/
+
 ### Front Page
 
 <img src="assets/banner.png" width="480" height="270">
