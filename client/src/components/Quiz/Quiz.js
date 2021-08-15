@@ -36,8 +36,8 @@ const Quiz = () => {
 
   const handleSubmit = () => {
     const eventData = { emotion: emojiId, task: taskId, reward: rewardId };
-    console.log(eventData);
-    dispatch(createEvent(eventData, history));
+    const user = JSON.parse(localStorage.getItem("profile"));
+    dispatch(createEvent(eventData, history, user.result.email));
   };
   return (
     <Container className={classes.quiz} component="main" maxWidth="xs">

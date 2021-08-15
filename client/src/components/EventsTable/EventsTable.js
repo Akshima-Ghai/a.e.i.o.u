@@ -13,7 +13,6 @@ const EventsTable = () => {
     const { events, isLoading } = useSelector((state) => {
         return state.events;
     });
-    console.log(events);
     return (
         <TableContainer className={classes.table} component={Paper}>
             <Typography variant="h5" className={classes.title}>Event History</Typography>
