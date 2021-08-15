@@ -25,16 +25,9 @@ const Events = () => {
       <Container className={classes.box}>
         <Grid container className={classes.noPosts}>
           <Grid item xs={12}>
-            <Typography variant="h5" style={{ fontWeight: "500", fontSize: "2rem" }}>
+            <Typography variant="h4" style={{ fontWeight: "500", display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
               No Events
             </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Box textAlign="center">
-              <Button component={Link} to="/quiz" className={classes.button} size="small" variant="contained">
-                Start Now
-              </Button>
-            </Box>
           </Grid>
         </Grid>
       </Container>

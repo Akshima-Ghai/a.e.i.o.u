@@ -27,12 +27,6 @@ export default makeStyles((theme) => ({
       marginBottom: "0.5rem",
     },
   },
-  icons: {
-    marginLeft: "auto !important",
-    [theme.breakpoints.down(350)]: {
-      marginRight: "auto",
-    },
-  },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
@@ -45,30 +39,43 @@ export default makeStyles((theme) => ({
     marginRight: "1rem",
     marginTop: "5px",
     textTransform: "none",
-    color: "#068fa0",
+    color: "#024649",
     borderRadius: 15,
-    borderColor: "#068fa0",
+    borderColor: "#cdf6f8",
+    backgroundColor: '#cdf6f8',
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
+    '&:hover': {
+      backgroundColor: '#cdf6e8',
+    },
     [theme.breakpoints.down("xs")]: {
       fontSize: "3vmin",
     },
+    fontWeight: '600',
+    marginTop: '0.5rem',
+    marginBottom: '0.5rem'
   },
   applyCancelled: {
     transform: "rotate(0deg)",
     marginRight: "1rem",
-    marginTop: "5px",
     textTransform: "none",
-    color: "#cc5050",
+    color: "#ff0500",
     borderRadius: 15,
-    borderColor: "#cc5050",
+    borderColor: "#ffdadb",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
+    marginTop: '0.5rem',
+    marginBottom: '0.5rem',
     [theme.breakpoints.down("xs")]: {
       fontSize: "3vmin",
     },
+    backgroundColor: '#ffdadb',
+    fontWeight: '600',
+    '&:hover': {
+      backgroundColor: '#fcdacb',
+    }
   },
 
   expandOpen: {

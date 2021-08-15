@@ -38,12 +38,12 @@ const Event = ({ event }) => {
             </Typography>
           </Grid>
           <Grid container item xs={12}>
-            <Grid item xs={12} sm={6} md={6} lg={6}>
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: 'flex', flexDirection: 'column' }} justifyContent="center">
               <>
                 {questions[1].answerOptions[event.task - 1].points.map((item, index) => {
                   return (
-                    <Typography style={{ color: "#0a4849" }} variant="body1" display="inline" className={classes.title}>
-                      <li key={index}>{item}</li>
+                    <Typography key={index} style={{ color: "#0a4849" }} variant="body1" display="inline" className={classes.title}>
+                      {item}
                     </Typography>
                   );
                 })}
@@ -51,21 +51,19 @@ const Event = ({ event }) => {
                   {user && (
                     <>
                       <Button className={classes.applyCompleted} size="small" variant="outlined" onClick={() => handleCompletedStatus()}>
-                        Completed
+                        Done
                       </Button>
                       <Reward openFavoritePopup={openFavoritePopup} setOpenFavoritePopup={setOpenFavoritePopup} event={event} />
                       <Button className={classes.applyCancelled} size="small" variant="outlined" onClick={() => handleCancelledStatus()}>
-                        Cancelled
+                        Cancel
                       </Button>
                     </>
                   )}
                 </Grid>
               </>
             </Grid>
-            <Grid item xs={12} sm={6} md={6} lg={6}>
-              <CardMedia>
-                <img className={classes.img} src={questions[1].answerOptions[event.task - 1].ansImg} title={questions[1].answerOptions[event.task - 1].answerText} />
-              </CardMedia>
+            <Grid item xs={12} sm={6} md={6} lg={6} style={{ display: 'flex' }} justifyContent="center" alignItems="center">
+              <img className={classes.img} alt={questions[1].answerOptions[event.task - 1].answerText} src={questions[1].answerOptions[event.task - 1].ansImg} title={questions[1].answerOptions[event.task - 1].answerText} />
             </Grid>
           </Grid>
         </Grid>
