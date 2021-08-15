@@ -7,6 +7,6 @@ export default makeStyles((theme) => ({
   },
   table: {
     borderRadius: "5px",
-    marginTop: "2rem",
+    border: '1px solid #016a74'
   },
 }));
