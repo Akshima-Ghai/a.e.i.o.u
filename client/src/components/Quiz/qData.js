@@ -8,6 +8,9 @@ import talk from "../../images/talk/Asset 1.png";
 import read from "../../images/read/Asset 1.png";
 import volunteer from "../../images/volunteer/Asset 1.png";
 import cycling from "../../images/cycling/Asset 1.png";
+import exercise from "../../images/exercise/Asset 1.png";
+import jog from "../../images/jog/Asset 1.png";
+import meditate from "../../images/meditate/Asset 1.png";
 import game from "../../images/game/Asset 1.png";
 import Icecream from "../../images/ice cream/Asset 1.png";
 import nap from "../../images/nap/Asset 1.png";
@@ -39,6 +42,9 @@ export const questions = [
       { id: "3", answerText: "Read", ansImg: read, points: ["Read", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
       { id: "4", answerText: "Volunteer", ansImg: volunteer, points: ["Volunteer", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
       { id: "5", answerText: "Cycling", ansImg: cycling, points: ["Cycling", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
+      { id: "6", answerText: "Jog", ansImg: jog, points: ["Jog", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
+      { id: "7", answerText: "Meditate", ansImg: meditate, points: ["Meditate", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
+      { id: "8", answerText: "Exercise", ansImg: exercise, points: ["Exercise", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet"] },
     ],
   },
   {
