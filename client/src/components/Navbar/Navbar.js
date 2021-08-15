@@ -8,13 +8,20 @@ import useStyles from "./styles";
 
 const Navbar = () => {
   const classes = useStyles();
-
+  const user = JSON.parse(localStorage.getItem("profile"));
   return (
     <AppBar className={classes.appBar} position="static" color="inherit" elevation={0} width="100%">
-      <Link to="/" className={classes.brandContainer}>
-        {/* <img className={classes.image} src={logo} alt="icon" /> */}
-        <p className={classes.title}>aeiou</p>
-      </Link>
+      {user ? (
+        <Link to="/home" className={classes.brandContainer}>
+          {/* <img className={classes.image} src={logo} alt="icon" /> */}
+          <p className={classes.title}>aeiou</p>
+        </Link>
+      ) : (
+        <Link to="/" className={classes.brandContainer}>
+          {/* <img className={classes.image} src={logo} alt="icon" /> */}
+          <p className={classes.title}>aeiou</p>
+        </Link>
+      )}
       <Toolbar className={classes.toolbar} variant="dense">
         <RightMenu />
       </Toolbar>
