@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createEvent } from "../../actions/events";
-import { Container, Grid, Card, CardContent, CardActionArea, CardMedia, Typography, Button } from "@material-ui/core";
+import { Container, Grid, Paper, Typography, Button } from "@material-ui/core";
 import { questions } from "./qData";
 import useStyles from "./styles";
 
@@ -43,36 +43,38 @@ const Quiz = () => {
     <Container className={classes.quiz} component="main" maxWidth="xs">
       <Grid className={classes.paper}>
         {showResult ? (
-          <>
-            <Typography variant="h5">Ready for your task?</Typography>
+          <Paper className={classes.final}>
+            <Typography className={classes.quizTitle}>Ready for your task?</Typography>
             {questions[1].answerOptions[taskId - 1].points.map((item, index) => (
-              <li key={index}>{item}</li>
+              <Typography className={classes.points} key={index}>{item}</Typography>
             ))}
-            <Button className={classes.option} variant="outlined" color="primary" onClick={() => handleSubmit()}>
+            <img className={classes.img} alt={questions[1].answerOptions[taskId - 1].answerText} src={questions[1].answerOptions[taskId - 1].ansImg} title={questions[1].answerOptions[taskId - 1].answerText} />
+            <Button className={classes.acceptBtn} variant="contained" onClick={() => handleSubmit()}>
               I Accept
             </Button>
-          </>
+          </Paper>
         ) : (
           <>
-            <Typography variant="h5">{questions[currentQ].questionText}</Typography>
-            <Grid item className={classes.optionsGrid}>
-              {questions[currentQ].answerOptions.map((option) => (
-                <Card className={classes.option} onClick={() => handleSubmitOptions(option.id)}>
-                  <CardActionArea>
-                    <CardMedia
-                      className={classes.media}
-                      image={option.ansImg}
-                      title={option.answerText}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
+            <Typography className={classes.quizTitle}>{questions[currentQ].questionText}</Typography>
+            {questions[currentQ].answerOptions.map((option) => (
+              <Button variant="outlined" className={classes.option} onClick={() => handleSubmitOptions(option.id)}>
+                {option.ansEmo} {option.answerText}
+                {/* <CardContent className={classes.cardContent}>
+                  <Grid container item xs={12}>
+                    <Grid item xs={12} sm={6} md={6} lg={6} className={classes.optionsGrid}>
+                      <Typography style={{ color: "#0a4849" }} variant="h4" display="inline" className={classes.quizTitle}>
                         {option.answerText}
                       </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
-              ))}
-            </Grid>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={6} lg={6} className={classes.optionsGrid}>
+                      <CardMedia>
+                        <img className={classes.img} alt={option.answerText} src={option.ansImg} title={option.answerText} />
+                      </CardMedia>
+                    </Grid>
+                  </Grid>
+                </CardContent> */}
+              </Button>
+            ))}
           </>
         )}
       </Grid>
