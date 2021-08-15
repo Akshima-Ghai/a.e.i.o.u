@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Button, Container, Grid, Typography, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { getEvents } from "../../actions/events";
 import Events from "../Events/Events";
@@ -24,10 +25,11 @@ const Home = () => {
 
   let counter = 0;
   if (events.length > 0) {
-    let startdate = events[0].createdAt.split("-")[2].slice(0, 2);
+    let startdate = moment(new Date(events[0].createdAt)).format().split("-")[2].slice(0, 2);
+
     counter = events[0].status === "Completed" ? 1 : 0;
     for (let i = 1; i < events.length; i++) {
-      let date = events[i].createdAt.split("-")[2].slice(0, 2);// eslint-disable-next-line
+      let date = moment(new Date(events[i].createdAt)).format().split("-")[2].slice(0, 2);// eslint-disable-next-line
       if (date == startdate) {
         continue;
       } else if (events[i].status !== "Completed") {
