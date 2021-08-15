@@ -1,12 +1,13 @@
 import useStyles from "./styles";
 import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
+import StarIcon from '@material-ui/icons/Star';
 import { TableContainer, Typography, Chip, Paper, Table, TableHead, TableRow, TableCell, TableBody, IconButton } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { deleteEvent } from "../../actions/events";
 import { questions } from "../Quiz/qData";
 
-const EventsTable = () => {
+const EventsTable = ({ counter }) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const { events } = useSelector((state) => {
@@ -21,6 +22,13 @@ const EventsTable = () => {
       <Typography variant="h4" style={{ color: "#01444a" }} className={classes.title}>
         Event History
       </Typography>
+      {counter > 1 && (
+        <div className={classes.StreakContainer}>
+          <Typography variant="h6" display="inline" className={classes.starTitle}>
+            <StarIcon style={{ color: '#fead00' }} /> You are on {counter} day streak
+          </Typography>
+        </div>
+      )}
       <Table>
         <TableHead>
           <TableRow>

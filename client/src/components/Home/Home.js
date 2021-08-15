@@ -25,17 +25,17 @@ const Home = () => {
   let counter = 0;
   if (events.length > 0) {
     let startdate = events[0].createdAt.split("-")[2].slice(0, 2);
-    counter = events[0].status == "Completed" ? 1 : 0;
+    counter = events[0].status === "Completed" ? 1 : 0;
     for (let i = 1; i < events.length; i++) {
-      let date = events[i].createdAt.split("-")[2].slice(0, 2);
+      let date = events[i].createdAt.split("-")[2].slice(0, 2);// eslint-disable-next-line
       if (date == startdate) {
         continue;
-      } else if (events[i].status != "Completed") {
-        continue;
+      } else if (events[i].status !== "Completed") {
+        continue;// eslint-disable-next-line
       } else if (date == parseInt(startdate) + 1) {
         counter += 1;
-        startdate = date;
-      } else if (date != parseInt(startdate) + 1 && events[i].status == "Completed") {
+        startdate = date;// eslint-disable-next-line
+      } else if (date != parseInt(startdate) + 1 && events[i].status === "Completed") {
         startdate = date;
         counter = 1;
       } else {
@@ -53,41 +53,27 @@ const Home = () => {
         <Container className={classes.box}>
           <Grid className={classes.gridContainer} container justifyContent="center" alignItems="stretch">
             <Grid item xs={12}>
-              <Box textAlign="center">
+              <Box textAlign="left">
                 <Typography style={{ color: "#0a4849" }} variant="h5" display="inline" className={classes.title}>
                   Hello <span style={{ color: "#068fa0" }}>{user.result.name}</span>, <br /> How are you feeling Today?
                 </Typography>
               </Box>
             </Grid>
             <Grid item xs={12}>
-              <Box textAlign="center">
+              <Box textAlign="left">
                 <Button component={Link} to="/quiz" className={classes.button} size="small" variant="contained">
                   Start Now
                 </Button>
               </Box>
             </Grid>
           </Grid>
-          {counter > 1 && (
-            <div className={classes.StreakContainer}>
-              <Typography style={{ color: "#0a4849" }} variant="h6" display="inline" className={classes.title}>
-                <span className={classes.StreakStar}>&#9733;</span> You are on {counter} day streak
-              </Typography>
-              <div className={classes.StreakCounterContainer}>
-                <div className={classes.StreakCounter}>
-                  <Typography style={{ color: "white" }} variant="h6" display="inline" className={classes.title}>
-                    {counter}
-                  </Typography>
-                </div>
-              </div>
-            </div>
-          )}
         </Container>
       </Grid>
       <Grid item xs={12} sm={11} md={8} lg={7}>
         <Events />
       </Grid>
       <Grid item xs={12} sm={11} md={8} lg={7}>
-        <EventsTable />
+        <EventsTable counter={counter} />
       </Grid>
     </Grid>
   );

@@ -10,4 +10,13 @@ export default makeStyles((theme) => ({
     borderRadius: "5px",
     border: "1px solid  #068fa0",
   },
+  StreakContainer: {
+    textAlign: "left !important",
+    marginLeft: "1rem"
+  },
+  starTitle: {
+    color: '#068fa0',
+    display: 'flex',
+    alignItems: 'center'
+  },
 }));

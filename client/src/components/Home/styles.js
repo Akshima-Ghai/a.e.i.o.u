@@ -19,9 +19,9 @@ export default makeStyles((theme) => ({
   },
   box: {
     alignItems: "center",
-    backgroundColor: "#ffffff",
+    backgroundColor: "transparent",
     borderRadius: "5px",
-    border: "1px solid #068fa0",
+    border: "1px dashed #068fa0",
   },
   button: {
     color: "#fff",
@@ -32,26 +32,5 @@ export default makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "#468fa0",
     },
-  },
-  StreakContainer: {
-    textAlign: "center",
-  },
-  StreakHeader: {
-    margin: "0",
-  },
-  StreakStar: {
-    color: "#068fa0",
-    width: "1rem",
-  },
-  StreakCounterContainer: {
-    display: "flex",
-    justifyContent: "center",
-  },
-  StreakCounter: {
-    marginBottom: "1rem",
-    backgroundColor: "#068fa0",
-    padding: " .20rem 0.8rem",
-    color: "white",
-    borderRadius: "15px",
   },
 }));
