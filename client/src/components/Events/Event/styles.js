@@ -1,11 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
-  media: {
-    height: 0,
-    paddingTop: "56.25%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    backgroundBlendMode: "darken",
+  img: {
+    maxWidth: "25vw",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "40vw",
+    },
+    [theme.breakpoints.down("xs")]: {
+      paddingTop: "10px",
+      maxWidth: "75vw",
+    },
   },
   border: {
     border: "solid",
@@ -23,6 +27,12 @@ export default makeStyles((theme) => ({
       marginBottom: "0.5rem",
     },
   },
+  icons: {
+    marginLeft: "auto !important",
+    [theme.breakpoints.down(350)]: {
+      marginRight: "auto",
+    },
+  },
   expand: {
     transform: "rotate(0deg)",
     marginLeft: "auto",
@@ -30,13 +40,37 @@ export default makeStyles((theme) => ({
       duration: theme.transitions.duration.shortest,
     }),
   },
-  apply: {
+  applyCompleted: {
     transform: "rotate(0deg)",
-    marginLeft: "auto",
+    marginRight: "1rem",
+    marginTop: "5px",
+    textTransform: "none",
+    color: "#068fa0",
+    borderRadius: 15,
+    borderColor: "#068fa0",
     transition: theme.transitions.create("transform", {
       duration: theme.transitions.duration.shortest,
     }),
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "3vmin",
+    },
   },
+  applyCancelled: {
+    transform: "rotate(0deg)",
+    marginRight: "1rem",
+    marginTop: "5px",
+    textTransform: "none",
+    color: "#cc5050",
+    borderRadius: 15,
+    borderColor: "#cc5050",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "3vmin",
+    },
+  },
+
   expandOpen: {
     transform: "rotate(180deg)",
   },
@@ -47,7 +81,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
-    borderRadius: "0.5rem",
+    borderRadius: "0rem",
     position: "relative",
   },
   overlay: {
@@ -60,7 +94,7 @@ export default makeStyles((theme) => ({
     position: "absolute",
     top: "0px",
     right: "0px",
-    color: "white",
+    color: "#0a4849",
   },
   grid: {
     display: "flex",
