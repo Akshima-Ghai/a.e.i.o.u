@@ -16,39 +16,49 @@
 
 ### Front Page
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1159).png" width="480" height="270">
 
 ### Home Page
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1162).png" width="480" height="270">
+
+<img src="assets/Screenshot (1163).png" width="480" height="270">
 
 ### Sign In Page
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1160).png" width="480" height="270">
 
 ### Sign Up Page
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1161).png" width="480" height="270">
 
 ### Emotion Quiz
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1164).png" width="480" height="270">
 
 ### Task Quiz
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1165).png" width="480" height="270">
 
 ### Reward Quiz
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1166).png" width="480" height="270">
+
+### Accept Task
+
+<img src="assets/Screenshot (1167).png" width="480" height="270">
 
 ### Home Page after adding Events
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1168).png" width="480" height="270">
+
+<img src="assets/Screenshot (1169).png" width="480" height="270">
+
+<img src="assets/Screenshot (1170).png" width="480" height="270">
 
 ### Reward Page
 
-<img src="assets/banner.png" width="480" height="270">
+<img src="assets/Screenshot (1171).png" width="480" height="270">
 
 ## Technology Stack
 
@@ -164,4 +174,3 @@ http://localhost:3000/
 <br/>
 
 - Now you are all set to use this project.
-
