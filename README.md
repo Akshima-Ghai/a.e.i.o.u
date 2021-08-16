@@ -3,12 +3,16 @@
 <p align="center"><img src="assets/emotion.png" width="100" height="100"></p>
 
 ### 🌟 aeiou (An Emotion Invigilator Only for You) is a web application that gamifies 💻 stress/anxiety/depression management in an actionable manner to provide peace of mind.
-
-- Needs to be added
+ 
+- The main focus of this web app is to not only make people aware of their emotions but also get them to take actions to take control of their emotions through a short game quiz where they can select a task which needs to be completed before the day ends.
 
 ### Features
 
-- Needs to be added
+- Users can create an account by registering their email ids;
+- Users can play a small quiz game🎮 where they can accept a challenge based on their emotion and select a reward.
+- After completion of the challenge, they can give themselves the reward🎉 earlier selected by them.
+- Users can check their task status and event history.
+- A streak🌟 will be maintained if user continues to complete at least one challenge per day.
 
 ## A sneak peek into what we have here!
 
